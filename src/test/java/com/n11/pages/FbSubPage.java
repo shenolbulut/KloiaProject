@@ -31,6 +31,10 @@ public class FbSubPage extends LoginPage {
 
 
 
+    /**
+     *      with this method we can log in facebook pobup. inside method I used different methods from
+     * user page and main page,
+     */
     public void loginWithFB(){
         waitAndClickForClickability(fbIleGiris);
         GeneralUtils.waitFor(5);

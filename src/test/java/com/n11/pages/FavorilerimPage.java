@@ -26,6 +26,14 @@ public class FavorilerimPage extends MainPage{
         waitAndClickForClickability(favorilerList);
     }
 
+
+    /**
+     * in this method we gets the text of products element's text inside the favoriler page
+     * and compair them with parametr
+     *
+     * @param prodName
+     * @return boolean
+     */
     public boolean verifyTheProduct(String prodName){
         List<String> elementsText = GeneralUtils.getElementsText(favoriProducts);
         for (String elm:elementsText ){
@@ -35,6 +43,9 @@ public class FavorilerimPage extends MainPage{
         return false;
     }
 
+    /**
+     * at the end of compairing the products. We delete that product from the favoriler.
+     */
     public void deleteProdFromList(){
         waitAndClickForClickability(deleteProd);
         waitAndClickForClickability(okDeleteBtn);

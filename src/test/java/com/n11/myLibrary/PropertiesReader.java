@@ -10,6 +10,10 @@ public class PropertiesReader {
 
     private static Properties properties;
 
+    /**
+     * this methods is using for reading properties file inside this project.
+     */
+
     static {
 
         try {

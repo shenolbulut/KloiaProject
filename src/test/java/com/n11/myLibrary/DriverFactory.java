@@ -23,13 +23,20 @@ public class DriverFactory {
 
     }
 
+    /**
+     * with the help of InheritableThread we create a cointainer of webdriver.
+     */
     private static InheritableThreadLocal<WebDriver> driverContainer = new InheritableThreadLocal<>();
 
     public static WebDriver get() {
 
         if (driverContainer.get() == null) {
 
-
+            /**
+             *      in this line I give a condition for my browser. first it looks the system then if it is null,
+             * it look the properties file and with the switch conditions we can easly change our browser.
+             * Also in coloud, we can easyly run our test in multiable coresbrowsers
+             */
             String browser =  System.getProperty("browser") != null ? browser = System.getProperty("browser") : PropertiesReader.get("browser");
 
             switch (browser) {

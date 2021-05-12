@@ -40,6 +40,12 @@ public abstract class MainPage {
         return DriverFactory.get().findElement(By.xpath(path));
     }
 
+    /**
+     *      this methoc is used for task3. I took all the footer element's href attribute and
+     *  put them inside a list.
+     * @return List
+     */
+
     public List<String> allFootersLinks(){
         GeneralUtils.scrolToPage();
         closeToPopub();
@@ -53,6 +59,9 @@ public abstract class MainPage {
         return allFootersLinks;
     }
 
+    /**
+     * with this method I can close the popubs. I also used switchWindows method inside
+     */
     public void closeToPopub(){
 
         new LoginPage().switchWindows("n11.com - Hayat Sana Gelir");
@@ -66,6 +75,11 @@ public abstract class MainPage {
     }
 
 
+
+    /**
+     * I used this method for Task3. with this method we can read from .text file with the help of
+     * Scanner class and FileReader class
+     */
     public List<String> readFileText() throws Exception {
         Scanner scan=new Scanner(new FileReader("links.text"));
         List<String> expectedLinkList=new ArrayList<>();

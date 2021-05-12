@@ -13,6 +13,12 @@ public class LoginPage extends MainPage{
     public WebElement fbIleGiris;
 
     String originPageTitle;
+
+    /**
+     *      with this method we can switch betwean windows. during switching windows, if conditions
+     *  occure, it stops the execution and selenium automete that window
+     * @param targetTitle
+     */
     public void switchWindows(String targetTitle) {
 
         for (String handle : DriverFactory.get().getWindowHandles()) {

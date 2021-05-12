@@ -24,13 +24,27 @@ public class ParfumeDeodarantPage extends MainPage{
 
 
 
+    /**
+     *          in task 2 it is asked to clik 7. product. so this method is used for this. It takes the number
+     * and took it manupulated css locator. so you can change the product just changing the number. it is
+     * resuablity.
+     *
+     * @param prodNum
+     */
     public void clickProductFavorits(int prodNum){
         String path="[data-position='"+prodNum+"']>a>div>.itemize-fav-btn.itemize-favorite";
         WebElement favorilerIcon = DriverFactory.get().findElement(By.cssSelector(path));
         waitAndClickForClickability(favorilerIcon);
 
-
     }
+
+    /**
+     *      This method is used with previus method. to take the product name and compare it after
+     *  favoriler page. Logic is the same. just choose the number of element and take it's name.
+     *
+     * @param prodNum
+     * @return String
+     */
 
     public String takeTheProductName(int prodNum){
         String path="[data-position='"+prodNum+"']>a>h3";
@@ -38,6 +52,12 @@ public class ParfumeDeodarantPage extends MainPage{
         return prodElement.getText();
     }
 
+    /**
+     *      with this method we can easly go to favorilerim page. return type is FavorilerimPage so
+     *  you can call directly some variables from return object with this method
+     *
+     * @return FavorilerimPage
+     */
     public FavorilerimPage goToFavorilerim(){
         waitAndClickForClickability(favorilerimPage);
         return new FavorilerimPage();
